@@ -1,0 +1,91 @@
+div.App {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+div.App div.Body{
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  display: flex;
+  flex-grow: 2;
+  width: 100%;
+}
+
+div.Body .file-directory {
+  min-width: 300px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+div.Body .file-list{
+
+}
+
+div.App div.Navbar {
+  height: 48px;
+  background-color: #2196F3;
+  color: white!important;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+
+div.App div.Navbar > div{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+div.App div.Navbar .left{
+  text-align: left;
+  padding-left: 100px;
+  font-size: 28px;
+  font-weight: 500;
+}
+
+div.FileList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+div.FileDirectory {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  border-right: 2px solid #fafafa;
+  box-shadow: 2px 2px 2px #555;
+}
+
+div.File {
+  width: 150px;
+  flex-direction: row;
+
+}
+
+div.File .logo{
+  width: 150px;
+  font-size: 80px;
+  text-align: center;
+  color: #2196F3;
+}
+
+div.File .logo img{
+  width: 100%;
+}
+
+div.File .file-name{
+  font-size: 18px;
+  text-align: center;
+  color: #2196F3;
+}
+
