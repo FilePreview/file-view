@@ -1,0 +1,32 @@
+div.File {
+    width: 150px;
+    flex-direction: row;
+    padding: 10px;
+    box-sizing: content-box;
+}
+
+div.File .logo{
+    width: 150px;
+    font-size: 80px;
+    text-align: center;
+    color: #2196F3;
+}
+
+div.File .logo img{
+    width: 100%;
+}
+
+div.File .file-name{
+    font-size: 18px;
+    text-align: center;
+    color: #2196F3;
+}
+
+div.File:hover, div.File:focus {
+    background-color: #2196F3;
+    cursor: pointer;
+}
+
+div.File:hover .logo, div.File:hover .file-name, div.File:focus .logo, div.File:focus .file-name{
+    color: #fff;
+}

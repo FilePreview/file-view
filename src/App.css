@@ -24,7 +24,7 @@ div.Body .file-directory {
 }
 
 div.Body .file-list{
-
+  padding: 20px;
 }
 
 div.App div.Navbar {
@@ -64,28 +64,5 @@ div.FileDirectory {
   padding: 20px;
   border-right: 2px solid #fafafa;
   box-shadow: 2px 2px 2px #555;
-}
-
-div.File {
-  width: 150px;
-  flex-direction: row;
-
-}
-
-div.File .logo{
-  width: 150px;
-  font-size: 80px;
-  text-align: center;
-  color: #2196F3;
-}
-
-div.File .logo img{
-  width: 100%;
-}
-
-div.File .file-name{
-  font-size: 18px;
-  text-align: center;
-  color: #2196F3;
 }
 

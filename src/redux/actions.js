@@ -1,13 +1,20 @@
 import * as req from '../api/api'
 import { GET_FILE_LIST } from './action-types'
 
-export const getFileList = ({ path,  result }) => {
-  let treeList = []
+const ext = str => str.substr(str.lastIndexOf('.') + 1)
+
+export const getFileList = ({ path, result }) => {
+  let fileTree = []
+  let files = []
   let j = 0
   for (let i = 0; i < result.length; i++) {
     let { name, type } = result[i]
+    files[i] = {
+      title: name,
+      type: type === 'dir' ? type : ext(name)
+    }
     if (type !== 'dir') continue
-    treeList[j++] = {
+    fileTree[j++] = {
       title: name,
       key: path + i,
       children: [{ title: '' }]
@@ -16,7 +23,7 @@ export const getFileList = ({ path,  result }) => {
 
   return {
     type: GET_FILE_LIST,
-    data: { path, list: treeList }
+    data: { path, fileTree, files }
   }
 }
 

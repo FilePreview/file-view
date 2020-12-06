@@ -8,7 +8,7 @@ class FileList extends Component {
     return (
       <div className="FileList">
         {
-          this.props.files.map((item, index) => <File key={index} name={item.title}/>)
+          this.props.files.map((item, index) => <File key={index} name={item.title} type={item.type}/>)
         }
       </div>
     )
@@ -17,7 +17,7 @@ class FileList extends Component {
 
 FileList = connect(
   state => ({
-    files: state['Explorer'].fileTree
+    files: state['Explorer'].files
   })
 )(FileList)
 
