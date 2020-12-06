@@ -9,26 +9,28 @@ import {
 } from '@ant-design/icons'
 import PropTypes from 'prop-types'
 import './File.css'
+import { connect } from 'react-redux'
+import { getFileListAsync, openFolder } from '../redux/actions'
 
 const logoList = {
   file: <FileOutlined/>,
   dir: <FolderOpenOutlined/>,
-  gif: <FileGifOutlined />,
-  jpg: <FileJpgOutlined />,
-  png: <FileJpgOutlined />,
-  jpeg: <FileJpgOutlined />,
-  md: <FileMarkdownOutlined />,
-  ppt: <FilePptOutlined />,
-  pptx: <FilePptOutlined />,
-  txt: <FileTextOutlined />,
-  pdf: <FilePdfOutlined />,
-  xls: <FileExcelOutlined />,
-  xlsx: <FileExcelOutlined />,
-  zip: <FileZipOutlined />,
-  rar: <FileZipOutlined />,
-  doc: <FileWordOutlined />,
-  docx: <FileWordOutlined />,
-  unknown: <FileUnknownOutlined />
+  gif: <FileGifOutlined/>,
+  jpg: <FileJpgOutlined/>,
+  png: <FileJpgOutlined/>,
+  jpeg: <FileJpgOutlined/>,
+  md: <FileMarkdownOutlined/>,
+  ppt: <FilePptOutlined/>,
+  pptx: <FilePptOutlined/>,
+  txt: <FileTextOutlined/>,
+  pdf: <FilePdfOutlined/>,
+  xls: <FileExcelOutlined/>,
+  xlsx: <FileExcelOutlined/>,
+  zip: <FileZipOutlined/>,
+  rar: <FileZipOutlined/>,
+  doc: <FileWordOutlined/>,
+  docx: <FileWordOutlined/>,
+  unknown: <FileUnknownOutlined/>
 }
 
 const Logo = props => {
@@ -38,23 +40,42 @@ const Logo = props => {
   else return logoList['file']
 }
 
-export class File extends Component {
+class File extends Component {
 
   static propTypes = {
     name: PropTypes.string,
     type: PropTypes.string
   }
 
+  handleClick = () => {
+    if (this.props.type === 'dir') {
+      let path = this.props.path + '/' + this.props.name
+      this.props.openFolder(path)
+      this.props.getFileListAsync(path)
+    }
+  }
+
   render () {
     return (
-      <div className="File">
+      <div className="File" onClick={this.handleClick}>
         <div className="logo">
           {<Logo type={this.props.type}/>}
         </div>
-        <div className="file-name">
+        <p className="file-name">
           {this.props.name}
-        </div>
+        </p>
       </div>
     )
   }
 }
+
+File = connect(
+  state => {
+    return {
+      path: state['Explorer'].path,
+    }
+  },
+  { getFileListAsync, openFolder }
+)(File)
+
+export { File }

@@ -1,0 +1,30 @@
+div.App div.Navbar {
+    height: 48px;
+    background-color: #2196F3;
+    color: white!important;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    top: 0;
+}
+
+div.App div.Navbar > div{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+div.App div.Navbar .left{
+    text-align: left;
+    padding-left: 20px;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+div.App div.Navbar .left > div{
+    margin-right: 20px;
+}

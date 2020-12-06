@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { File } from './File'
 import { connect } from 'react-redux'
+import './FileList.css'
 
 class FileList extends Component {
 

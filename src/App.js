@@ -8,11 +8,7 @@ import { connect } from 'react-redux'
 import { getFileListAsync } from './redux/actions'
 
 class App extends React.Component {
-  componentWillMount () {
-    this.props.getFileListAsync('/')
-  }
-
-  render () {
+    render () {
     return (
       <div className="App">
         <Navbar/>
@@ -25,9 +21,6 @@ class App extends React.Component {
   }
 }
 
-App = connect(
-  ()=>({}),
-  { getFileListAsync }
-)(App)
+
 
 export default App
