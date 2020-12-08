@@ -17,7 +17,7 @@ class Navbar extends Component {
       <div className="Navbar">
         <div className="left">
           <div>
-            <Button danger onClick={this.handleBack}>Back</Button>
+            <Button primary onClick={this.handleBack}>Back</Button>
           </div>
           {/*<Breadcrumb style={{color: 'white'}}>*/}
           {/*  <Breadcrumb.Item key={'first-node'} style={{color: 'white'}}>/</Breadcrumb.Item>*/}

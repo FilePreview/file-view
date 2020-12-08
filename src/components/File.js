@@ -11,6 +11,7 @@ import PropTypes from 'prop-types'
 import './File.css'
 import { connect } from 'react-redux'
 import { getFileListAsync, openFolder } from '../redux/actions'
+import { apiUrl } from '../config'
 
 const logoList = {
   file: <FileOutlined/>,
@@ -52,12 +53,15 @@ class File extends Component {
       let path = this.props.path + '/' + this.props.name
       this.props.openFolder(path)
       this.props.getFileListAsync(path)
+    } else {
+      let path = this.props.path + '/' + this.props.name
+      window.open(`${apiUrl}${path}`)
     }
   }
 
   render () {
     return (
-      <div className="File" onClick={this.handleClick}>
+      <div className="File" onDoubleClick={this.handleClick}>
         <div className="logo">
           {<Logo type={this.props.type}/>}
         </div>
